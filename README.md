@@ -12,10 +12,9 @@ Este repositório contém anotações, exercícios e implementações baseadas n
 
 ## 📖 Conteúdo Estudado
 
-### 1️⃣ Introdução
+### 1️⃣ JavaScript - uma visão geral
 
 - Conceitos básicos sobre algoritmos e estruturas de dados.
-- Complexidade de tempo e espaço (Big-O Notation).
 
 ### 2️⃣ Listas
 

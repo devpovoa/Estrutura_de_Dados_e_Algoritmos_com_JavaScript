@@ -1,26 +1,105 @@
-# JavaScript - uma visão geral
+# JavaScript - Uma Visão Geral
 
-### Uso para o JavaScript
+## Introdução
 
-:arrow_right: No backend com **NodeJS**
+JavaScript é uma linguagem de programação amplamente utilizada para desenvolvimento web, tanto no frontend quanto no backend. Sua versatilidade permite a criação de aplicações para diversas plataformas.
 
-:arrow_right: No mobile com **Apache Cordova**
+## Onde o JavaScript pode ser utilizado?
 
-:arrow_right: No desktop com **Electron**
+- **Backend:** com **Node.js**
+- **Mobile:** com **Apache Cordova**
+- **Desktop:** com **Electron**
+- **Internet das Coisas (IoT):** através de plataformas compatíveis
 
-:arrow_right: Também é possível usa JavaScript no **IoT**
+## Criando um Servidor Web com Node.js
 
-### Servidor Web com Nodejs
+Para iniciar rapidamente um servidor web com Node.js, utilize o pacote `http-server`:
 
 ```bash
-npm i http-server -g
+npm install -g http-server
 ```
 
-### Variáveis
+## Variáveis em JavaScript
 
-As variáveis armazenam dados que podem ser definidos, atualizados e recuperados sempre que necessário. Os valores atribuídos a uma variável têm um tipo. Em JavaScript, os tipos disponíveis são: **number, string, boolean, function, object**. Também temos **undefined e null**, juntos com arrays, datas e expressões regulares.
+As variáveis armazenam dados que podem ser definidos, atualizados e recuperados conforme necessário. Em JavaScript, os tipos de dados incluem:
 
-De acordo com as espeficicção, há dois tipos de dados em JavaScript:
+### Tipos primitivos
 
-- **tipo de dados primitivos:** null (Nulo), undefined (indefinido), string, number (número), boolean (booleano) e symbol (símbolos);
-- **tipos de dados derivados/objetos:** objetos JavaScript, incluindo funções, arrays e expressões regulares.
+- **string**: texto
+- **number**: números inteiros ou de ponto flutuante
+- **boolean**: verdadeiro (`true`) ou falso (`false`)
+- **null**: representa intencionalmente um valor vazio
+- **undefined**: uma variável declarada, mas sem valor atribuído
+- **symbol**: um identificador único
+
+### Tipos derivados (objetos)
+
+- **Objetos JavaScript** (JSON, instâncias de classe, etc.)
+- **Arrays**
+- **Funções**
+- **Expressões regulares (RegExp)**
+- **Datas (Date)**
+
+O JavaScript também aceita o operador `delete`, que remove propriedades de um objeto.
+
+## Orientação a Objetos em JavaScript
+
+Em JavaScript, objetos podem ser criados de diferentes formas:
+
+### Criando um objeto vazio
+
+```js
+let obj = {};
+```
+
+### Criando um objeto com `new Object()`
+
+```js
+let obj = new Object();
+```
+
+### Criando um objeto com propriedades aninhadas
+
+```js
+let obj = {
+  name: {
+    first: 'Nome',
+    last: 'Sobrenome'
+  },
+  address: 'Endereço'
+};
+```
+
+## Funções e Métodos em JavaScript
+
+Funções (também chamadas de métodos quando associadas a objetos) são um elemento essencial da linguagem.
+
+### Criando um método para um objeto
+
+```js
+Book.prototype.printTitle = function () {
+  console.log(this.title);
+};
+book.printTitle();
+```
+
+### Definindo funções dentro de uma classe
+
+```js
+function Book(title, pages, isbn) {
+  this.title = title;
+  this.pages = pages;
+  this.isbn = isbn;
+  
+  this.printIsbn = function () {
+    console.log(this.isbn);
+  };
+}
+
+let book = new Book('JavaScript Avançado', 300, '123456789');
+book.printIsbn();
+```
+
+## Conclusão
+
+JavaScript é uma linguagem versátil e essencial para o desenvolvimento moderno. Seu uso abrange diversas áreas, e entender seus conceitos fundamentais é crucial para qualquer desenvolvedor.

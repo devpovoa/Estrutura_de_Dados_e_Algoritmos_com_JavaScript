@@ -16,7 +16,7 @@ Este repositório contém anotações, exercícios e implementações baseadas n
 
 - Conceitos básicos sobre algoritmos e estruturas de dados.
 
-### 2️⃣ Listas
+### 2️⃣ Visão geral sobre ECMAScript e TypeScript
 
 - Arrays e suas operações básicas.
 - Listas encadeadas (simples, duplas e circulares).

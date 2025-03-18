@@ -63,10 +63,6 @@ Este repositório tem como objetivo documentar os estudos e análises do livro, 
 4. Análise de complexidade (Big-O) de cada abordagem.
 5. Comparação entre diferentes estratégias e melhorias.
 
-## 🤝 Contribuindo
-
-Se quiser contribuir para este estudo, fique à vontade para abrir um Pull Request ou sugerir melhorias através de Issues.
-
 ## 📚 Referências
 
 - [Livro Oficial](https://www.amazon.com.br/Estruturas-Dados-Algoritmos-com-JavaScript/dp/8575226932)
@@ -81,8 +77,6 @@ Caso tenha dúvidas ou queira trocar conhecimento, entre em contato:
 - 💼 [LinkedIn](https://www.linkedin.com/in/thiago-povoa-dev)
 
 ---
-
-📌 *Este repositório será atualizado conforme o estudo e implementação avançam.* 🚀
 
 ## 🏆 Contribuições
 
@@ -117,4 +111,4 @@ Este projeto está sob a licença [MIT](LICENSE).
 
 ---
 
-✨ Bons estudos e mãos à obra! 🚀
+🚀 Repositório criado e produzido por © DevPovoa 🎯

@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "es2016", // Define a versão do ECMAScript para a saída gerada.
+    "module": "commonjs", // Define o sistema de módulos a ser utilizado.
+    "outDir": "./dist", // Diretório onde os arquivos compilados serão colocados.
+    "rootDir": "./src", // Diretório raiz dos arquivos fontes TypeScript.
+    "esModuleInterop": true, // Facilita a importação de módulos CommonJS.
+    "skipLibCheck": true, // Ignora a verificação de tipos nos arquivos de definição (.d.ts).
+    "forceConsistentCasingInFileNames": true, // Garante que o nome dos arquivos seja consistente entre importações.
+    "strict": true // Habilita todas as opções de verificação de tipos.
+  },
+  "include": ["src/**/*.ts"], // Inclui todos os arquivos .ts dentro da pasta 'src'.
+  "exclude": ["node_modules"] // Exclui a pasta 'node_modules'.
+}

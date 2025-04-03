@@ -6,9 +6,9 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "DevPovoa",
   "license": "ISC",
-  "description": "",
+  "description": "Estudo de TypeScript",
   "devDependencies": {
     "typescript": "^5.8.2"
   }

@@ -310,7 +310,37 @@ let numbers = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];
 10. of => Cria um novo array a partir dos argumentos passados para o método.
 
 11. values => Devolve @@iterator, contendo os valores do array.
-    
-    
+
+
+
+### Classe TypedArray
+
+TypedArray foi criado para que pudéssemos trabalhar com arrays contendo um único tipo de dado.
+
+```js
+let myArray = new TypedArray(length);
+```
+
+Onde `TypedArray(length)` deve ser substituído por uma classe **TypedArray**.
+
+* `Int8Array` => Inteiro de 8 bits com sinal, usando complemento de dois.
+
+* `Uint8Array` => Inteiro de 8 bits sem sinal.
+
+* `Uint8ClampedArray` => Inteiro de 8 bits sem sinal.
+
+* `Int16Array` => Inteiro de 16 bits com sinal, usando complemento de dois.
+
+* `Uint16Array` => Inteiro de 16 bits sem sinal.
+
+* `Int32Array` => Inteiro de 32 bits com sinal, usando complemento de dois.
+
+*  `Uint32Array` => Inteiro de 32 bits sem sinal.
+
+* `Float32Array` => Número de ponto flutuante padrão IEEE com 32 bits.
+
+* `Float64Array` => Número de ponto flutuante padrão IEEE com 64 bits.
+
+
 
 

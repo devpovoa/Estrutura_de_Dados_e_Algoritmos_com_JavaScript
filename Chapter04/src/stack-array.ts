@@ -1,4 +1,4 @@
-class Stack<T> {
+class StackArray<T> {
   // Uso de Generics para armazenar qualquer tipo de dado.
   private items: T[]; // Declando explicitamente como um array do tipo T.
 
@@ -31,22 +31,22 @@ class Stack<T> {
   }
 }
 
-const stack = new Stack();
-console.log(stack.isEmpty());
+const stackArray = new StackArray();
+console.log(stackArray.isEmpty());
 
-stack.push("Thiago");
-stack.push(38);
-stack.push("M");
-stack.push(11);
+stackArray.push("Thiago");
+stackArray.push(38);
+stackArray.push("M");
+stackArray.push(11);
 
-console.log(stack.peek());
+console.log(stackArray.peek());
 
-console.log(stack.size());
-console.log(stack.isEmpty());
+console.log(stackArray.size());
+console.log(stackArray.isEmpty());
 
-console.log(stack);
+console.log(stackArray);
 
-stack.pop();
-stack.pop();
-console.log(stack.size());
-console.log(stack);
+stackArray.pop();
+stackArray.pop();
+console.log(stackArray.size());
+console.log(stackArray);

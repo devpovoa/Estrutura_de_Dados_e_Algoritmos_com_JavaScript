@@ -17,4 +17,20 @@ class Stack{
 }
 ```
 
+Porém, a melhor forma de declarar um atributo **private** em JavaScript é com o uso do **#** sustenido.
 
+```ts
+class StackObjeto<T> {
+  #count: number; // Uso de modificador de acesso #.
+  #items: Record<number, T>; // Declaração explicita de Chave-valor.
+
+  constructor() {
+    this.#count = 0;
+    this.#items = {
+    
+};  
+```
+
+### Convertendo números decimais para binários
+
+## Filas de deques

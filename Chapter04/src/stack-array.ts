@@ -31,22 +31,54 @@ class StackArray<T> {
   }
 }
 
-const stackArray = new StackArray();
-console.log(stackArray.isEmpty());
+function decimalToBinary(decNumber: number) {
+  if (decNumber === 0) return "0";
+  const remStack = new StackArray<number>();
+  let number = decNumber;
+  let rem: number;
+  let binaryString: string = "";
+  while (number > 0) {
+    rem = Math.floor(number % 2);
+    remStack.push(rem);
+    number = Math.floor(number / 2);
+  }
 
-stackArray.push("Thiago");
-stackArray.push(38);
-stackArray.push("M");
-stackArray.push(11);
+  while (!remStack.isEmpty()) {
+    binaryString += remStack.pop()?.toString();
+  }
 
-console.log(stackArray.peek());
+  return binaryString;
+}
 
-console.log(stackArray.size());
-console.log(stackArray.isEmpty());
+console.log(decimalToBinary(233));
+console.log(decimalToBinary(10));
+console.log(decimalToBinary(1000));
+console.log(decimalToBinary(0));
 
-console.log(stackArray);
+function baseConverter(decNumber: number, base: number): string {
+  const remStack = new StackArray<number>();
+  const digits: string = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  let number = decNumber;
+  let rem: number;
+  let baseString: string = "";
 
-stackArray.pop();
-stackArray.pop();
-console.log(stackArray.size());
-console.log(stackArray);
+  if (!(base >= 2 && base <= 36)) {
+    return "";
+  }
+
+  while (number > 0) {
+    rem = Math.floor(number % base);
+    remStack.push(rem);
+    number = Math.floor(number / base);
+  }
+
+  while (!remStack.isEmpty()) {
+    baseString += digits[remStack.pop()!];
+  }
+  return baseString;
+}
+
+console.log(baseConverter(100345, 2));
+console.log(baseConverter(100345, 8));
+console.log(baseConverter(100345, 16));
+console.log(baseConverter(100345, 35));

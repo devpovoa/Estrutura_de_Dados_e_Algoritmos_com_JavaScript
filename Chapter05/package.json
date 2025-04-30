@@ -5,7 +5,7 @@
   "scripts": {
     "test": "jest",
     "build": "tsc",
-    "doc": "typedoc src/Queue.ts"
+    "doc": "typedoc src/Queue.ts src/Deque.ts src/JogoDaBatata.ts"
   },
   "keywords": [],
   "author": "DevPovoa",

@@ -8,4 +8,8 @@ A estrutura de dados **deque**, também conhecida como **fila de duas pontas** (
 
 Como o deque implementa os princípios tanto de **FIFO** quanto de **LIFO**, podemos dizer também que o deque combina as estrututas de dados de fila e de pilha.
 
+#### Filas de tarefas em JavaScript
+
+Quando abrimos uma nova aba no navegador, uma fila de tarefas é criada. Isso ocorre porque apenas uma única thread trata todas as tarefas de uma única aba, e ela é chamada de **laço de eventos** (event loop).
+
 

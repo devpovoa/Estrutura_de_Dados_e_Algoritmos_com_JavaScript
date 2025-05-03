@@ -1,0 +1,22 @@
+{
+  "name": "chapter06",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "build": "tsc",
+    "doc": "typedoc src/structures/LinkedList.ts src/models/linked-list-models.ts --out docs"
+  },
+  "keywords": [],
+  "author": "DevPovoa",
+  "license": "MIT",
+  "description": "Estudo sobre Listas Ligadas",
+  "devDependencies": {
+    "@types/jest": "^29.5.14",
+    "@types/node": "^22.14.0",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.3.2",
+    "typedoc": "^0.28.2",
+    "typescript": "^5.8.3"
+  }
+}

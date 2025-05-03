@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "target": "ES6",
+    "module": "CommonJS",
+    "lib": ["es6", "dom", "esnext"],
+    "types": ["node", "jest"],
+    "outDir": "./dist",
+    "sourceMap": false,
+    "removeComments": true,
+    "strict": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "noEmitOnError": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "baseUrl": "./src",
+    "paths": {
+      "/util": ["utils/util.ts"],
+      "/models": ["models/*"],
+      "/structures": ["structures/*"]
+    }
+  },
+  "include": ["src", "tests/**/*.ts"],
+  "exclude": ["node_modules", "dist"]
+}

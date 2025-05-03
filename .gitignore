@@ -153,7 +153,7 @@ dist
 *.vsix
 
 # Ignorar a pasta docs
-/docs/
+docs/
 
 ### VisualStudioCode Patch ###
 # Ignore all local history of files

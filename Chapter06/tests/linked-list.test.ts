@@ -58,4 +58,58 @@ describe("LinkedList", () => {
     expect(lista.indexOf(2)).toBe(1);
     expect(lista.indexOf(99)).toBe(-1);
   });
+
+  test("deve retornar null ao obter elemento com índice inválido", () => {
+    lista.push(10);
+    expect(lista.getElementAt(-1)).toBeNull();
+    expect(lista.getElementAt(10)).toBeNull();
+  });
+
+  test("deve retornar false ao tentar remover elemento não existente", () => {
+    lista.push(1);
+    lista.push(2);
+    expect(lista.remove(99)).toBe(false);
+  });
+
+  test("deve retornar null para getElementAt quando a lista estiver vazia", () => {
+    expect(lista.getElementAt(0)).toBeNull();
+  });
+
+  test("deve retornar false ao tentar remover elemento inexistente", () => {
+    lista.push(10);
+    expect(lista.remove(20)).toBe(false);
+  });
+
+  test("deve retornar null ao remover da posição inválida", () => {
+    expect(lista.removeAt(10)).toBeNull();
+  });
+
+  test("deve retornar -1 ao buscar índice de elemento não existente", () => {
+    lista.push(1);
+    expect(lista.indexOf(999)).toBe(-1);
+  });
+
+  test("deve retornar null ao tentar remover posição inválida", () => {
+    lista.push(1);
+    expect(lista.removeAt(-1)).toBeNull();
+    expect(lista.removeAt(10)).toBeNull();
+  });
+
+  test("deve retornar string vazia ao chamar toString em lista vazia", () => {
+    expect(lista.toString()).toBe("");
+  });
+
+  test("deve retornar null para índice inválido", () => {
+    expect(lista.getElementAt(-1)).toBeNull();
+    expect(lista.getElementAt(10)).toBeNull();
+  });
+
+  test("deve limpar a lista com clear", () => {
+    lista.push(10);
+    lista.push(20);
+    lista.clear();
+    expect(lista.isEmpty()).toBe(true);
+    expect(lista.size()).toBe(0);
+    expect(lista.toString()).toBe("");
+  });
 });

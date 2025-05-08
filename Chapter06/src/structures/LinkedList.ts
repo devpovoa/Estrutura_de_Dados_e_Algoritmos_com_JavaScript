@@ -174,6 +174,14 @@ export default class LinkedList<T> {
   }
 
   /**
+   * Remove todos os elementos da lista, deixando-a vazia.
+   */
+  clear(): void {
+    this.#head = null;
+    this.#count = 0;
+  }
+
+  /**
    * Retorna uma representação em string da lista.
    * Os elementos são separados por vírgulas.
    *
@@ -183,15 +191,16 @@ export default class LinkedList<T> {
     if (this.isEmpty()) {
       return "";
     }
+
     let current: Node<T> | null = this.#head;
-    let objString = "";
+    const elements: string[] = [];
 
     while (current !== null) {
-      objString += `${current.element}${current.next !== null ? ", " : ""}`;
+      elements.push(`${current.element}`);
       current = current.next;
     }
 
-    return objString;
+    return elements.join(", ");
   }
 
   /**

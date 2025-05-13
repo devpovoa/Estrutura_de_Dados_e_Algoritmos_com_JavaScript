@@ -1,11 +1,12 @@
 {
   "name": "chapter06",
   "version": "1.0.0",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "test": "jest",
     "build": "tsc",
-    "doc": "typedoc src/structures/LinkedList.ts src/models/linked-list-models.ts --out docs"
+    "doc": "typedoc src/services/LinkedList.ts src/models/linked-list-models.ts --out docs"
   },
   "keywords": [],
   "author": "DevPovoa",

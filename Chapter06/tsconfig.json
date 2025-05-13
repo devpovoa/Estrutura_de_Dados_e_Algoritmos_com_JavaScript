@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
-    "target": "ES6",
-    "module": "CommonJS",
-    "lib": ["es6", "dom", "esnext"],
+    "target": "ESNext",
+    "module": "ESNext",
+    "lib": ["ESNext", "DOM"],
     "types": ["node", "jest"],
     "outDir": "./dist",
     "sourceMap": false,
@@ -16,11 +16,12 @@
     "strictNullChecks": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
+    "moduleResolution": "node",
     "baseUrl": "./src",
     "paths": {
       "/util": ["utils/util.ts"],
       "/models": ["models/*"],
-      "/structures": ["structures/*"]
+      "/services": ["services/*"]
     }
   },
   "include": ["src", "tests/**/*.ts"],

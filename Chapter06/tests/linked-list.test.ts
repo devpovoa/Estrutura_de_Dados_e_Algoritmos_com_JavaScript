@@ -1,115 +1,100 @@
-import LinkedList from "../src/structures/LinkedList";
+import { LinkedList } from "../src/services/LinkedList";
+import { defaultEquals } from "../src/utils/util";
 
 describe("LinkedList", () => {
-  let lista: LinkedList<number>;
+  let list: LinkedList<number>;
 
   beforeEach(() => {
-    lista = new LinkedList<number>();
+    list = new LinkedList<number>(defaultEquals);
   });
 
-  test("deve iniciar vazia", () => {
-    expect(lista.isEmpty()).toBe(true);
-    expect(lista.size()).toBe(0);
+  it("should insert elements correctly", () => {
+    list.push(10);
+    list.push(20);
+    list.push(30);
+
+    expect(list.size()).toBe(3);
+    expect(list.getElementAt(0)?.getElement()).toBe(10);
+    expect(list.getElementAt(1)?.getElement()).toBe(20);
+    expect(list.getElementAt(2)?.getElement()).toBe(30);
   });
 
-  test("deve adicionar elementos com push", () => {
-    lista.push(10);
-    lista.push(20);
-    expect(lista.isEmpty()).toBe(false);
-    expect(lista.size()).toBe(2);
-    expect(lista.toString()).toBe("10, 20");
+  it("should handle inserting at invalid positions", () => {
+    expect(list.insert(5, -1)).toBe(false); // Posição inválida
+    expect(list.insert(5, 5)).toBe(false); // Posição fora do alcance
+    expect(list.insert(5, 0)).toBe(true); // Posição válida (início)
+    expect(list.size()).toBe(1);
   });
 
-  test("deve inserir elementos em posições específicas", () => {
-    lista.push(10);
-    lista.push(20);
-    lista.insert(15, 1);
-    expect(lista.toString()).toBe("10, 15, 20");
+  it("should remove elements correctly", () => {
+    list.push(10);
+    list.push(20);
+    list.push(30);
+
+    expect(list.removeAt(1)).toBe(20); // Remove o elemento da posição 1
+    expect(list.size()).toBe(2);
+    expect(list.getElementAt(1)?.getElement()).toBe(30);
   });
 
-  test("deve remover elemento pelo valor", () => {
-    lista.push(1);
-    lista.push(2);
-    lista.push(3);
-    expect(lista.remove(2)).toBe(true);
-    expect(lista.toString()).toBe("1, 3");
+  it("should return null when removing at invalid index", () => {
+    expect(list.removeAt(-1)).toBeNull(); // Índice inválido
+    expect(list.removeAt(3)).toBeNull(); // Índice fora do alcance
   });
 
-  test("deve remover elemento pela posição", () => {
-    lista.push(5);
-    lista.push(6);
-    lista.push(7);
-    expect(lista.removeAt(1)).toBe(6);
-    expect(lista.toString()).toBe("5, 7");
+  it("should handle remove by value", () => {
+    list.push(10);
+    list.push(20);
+    list.push(30);
+
+    expect(list.remove(20)).toBe(true); // Remove elemento por valor
+    expect(list.size()).toBe(2);
+    expect(list.indexOf(20)).toBe(-1); // Elemento removido
+    expect(list.remove(40)).toBe(false); // Tenta remover um elemento inexistente
   });
 
-  test("deve obter elemento pelo índice", () => {
-    lista.push(100);
-    lista.push(200);
-    let no = lista.getElementAt(1);
-    expect(no).not.toBeNull();
-    expect(no!.element).toBe(200);
+  it("should clear the list", () => {
+    list.push(10);
+    list.push(20);
+
+    expect(list.size()).toBe(2);
+    list.clear();
+    expect(list.size()).toBe(0);
+    expect(list.isEmpty()).toBe(true);
   });
 
-  test("deve retornar o índice do elemento", () => {
-    lista.push(1);
-    lista.push(2);
-    lista.push(3);
-    expect(lista.indexOf(2)).toBe(1);
-    expect(lista.indexOf(99)).toBe(-1);
+  it("should return a correct string representation of the list", () => {
+    expect(list.toString()).toBe("");
+
+    list.push(10);
+    list.push(20);
+    expect(list.toString()).toBe("10, 20");
+
+    list.push(30);
+    expect(list.toString()).toBe("10, 20, 30");
   });
 
-  test("deve retornar null ao obter elemento com índice inválido", () => {
-    lista.push(10);
-    expect(lista.getElementAt(-1)).toBeNull();
-    expect(lista.getElementAt(10)).toBeNull();
+  it("should return null when getting an element at an invalid index", () => {
+    expect(list.getElementAt(0)).toBeNull(); // Lista vazia
+    list.push(10);
+    expect(list.getElementAt(1)).toBeNull(); // Índice fora do alcance
   });
 
-  test("deve retornar false ao tentar remover elemento não existente", () => {
-    lista.push(1);
-    lista.push(2);
-    expect(lista.remove(99)).toBe(false);
+  it("should correctly find index of an element", () => {
+    list.push(10);
+    list.push(20);
+    list.push(30);
+
+    expect(list.indexOf(20)).toBe(1); // Elemento encontrado
+    expect(list.indexOf(40)).toBe(-1); // Elemento não encontrado
   });
 
-  test("deve retornar null para getElementAt quando a lista estiver vazia", () => {
-    expect(lista.getElementAt(0)).toBeNull();
+  it("should return null when trying to remove element from empty list", () => {
+    expect(list.removeAt(0)).toBeNull(); // Tenta remover da lista vazia
   });
 
-  test("deve retornar false ao tentar remover elemento inexistente", () => {
-    lista.push(10);
-    expect(lista.remove(20)).toBe(false);
-  });
-
-  test("deve retornar null ao remover da posição inválida", () => {
-    expect(lista.removeAt(10)).toBeNull();
-  });
-
-  test("deve retornar -1 ao buscar índice de elemento não existente", () => {
-    lista.push(1);
-    expect(lista.indexOf(999)).toBe(-1);
-  });
-
-  test("deve retornar null ao tentar remover posição inválida", () => {
-    lista.push(1);
-    expect(lista.removeAt(-1)).toBeNull();
-    expect(lista.removeAt(10)).toBeNull();
-  });
-
-  test("deve retornar string vazia ao chamar toString em lista vazia", () => {
-    expect(lista.toString()).toBe("");
-  });
-
-  test("deve retornar null para índice inválido", () => {
-    expect(lista.getElementAt(-1)).toBeNull();
-    expect(lista.getElementAt(10)).toBeNull();
-  });
-
-  test("deve limpar a lista com clear", () => {
-    lista.push(10);
-    lista.push(20);
-    lista.clear();
-    expect(lista.isEmpty()).toBe(true);
-    expect(lista.size()).toBe(0);
-    expect(lista.toString()).toBe("");
+  it("should handle invalid access when list is empty", () => {
+    // Testa o comportamento de acessar elementos de uma lista vazia
+    expect(list.getElementAt(0)).toBeNull(); // Índice inválido em lista vazia
+    expect(list.indexOf(10)).toBe(-1); // Elemento não encontrado em lista vazia
   });
 });
